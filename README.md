@@ -1,70 +1,95 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React Todo-List APP
 
-## Available Scripts
+This is a simple **React** app for managing items (like a To-Do list) with features such as **adding**, **editing**, **deleting**, **searching**, and **marking items as checked**. The app interacts with a backend server (`json-server`) to persist the data.
 
-In the project directory, you can run:
+## Features
+- Add a new item with a name.
+- Edit an existing item.
+- Delete items.
+- Mark items as checked.
+- Search through items.
+- Fetch items from the server.
 
-### `npm start`
+## Tech Stack
+- **Frontend:** React, HTML, CSS
+- **Backend:** json-server (for local mock database)
+- **API:** RESTful API using JSON
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Setup
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 1. Clone the repository
 
-### `npm test`
+```bash
+git clone https://github.com/your-username/react-item-management.git
+cd react-item-management
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 2. Install dependencies
 
-### `npm run build`
+Run the following command to install the required dependencies for the frontend:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+npm install
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To run the backend, you will need `json-server`. Install it globally or locally.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### Install json-server globally:
 
-### `npm run eject`
+```bash
+npm install -g json-server
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+#### Or install json-server locally:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+npm install json-server --save-dev
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 3. Setup the Backend
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Create a file called `db.json` in the root directory (same level as `package.json`) and add the following structure:
 
-## Learn More
+```json
+{
+  "items": [
+    { "id": 1, "itemname": "Sample Item", "check": false }
+  ]
+}
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 4. Run the App
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### 4.1. Start the backend server
 
-### Code Splitting
+Start the backend server by running:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+json-server --watch db.json --port 3500
+```
 
-### Analyzing the Bundle Size
+#### 4.2. Start the frontend app
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Now, start the React app in development mode:
 
-### Making a Progressive Web App
+```bash
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+This will launch the app at `http://localhost:3000` and the backend server at `http://localhost:3500`.
 
-### Advanced Configuration
+### 5. Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- **Add Item:** Enter the item name and press `Enter` or click "Add Item".
+- **Edit Item:** Click the "Edit" button next to the item you want to edit, make changes, and click "Save".
+- **Delete Item:** Click the "Delete" button next to the item you want to remove.
+- **Check Item:** Click the checkbox to mark the item as completed or uncompleted.
+- **Search Items:** Type in the search bar to filter items by their name.
 
-### Deployment
+## Error Handling
+- If an error occurs during any operation (like adding, updating, or deleting), an error message will be displayed on the screen.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## License
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
