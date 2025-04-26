@@ -1,0 +1,19 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "itemname": "Learn React",
+      "check": false
+    },
+    {
+      "id": 2,
+      "itemname": "Complete project",
+      "check": true
+    },
+    {
+      "id": 3,
+      "itemname": "Buy groceries",
+      "check": false
+    }
+  ]
+}
